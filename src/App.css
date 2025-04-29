@@ -1,0 +1,296 @@
+/* Luxurious Black & Gold Gradient Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #FFD700;
+  --secondary: #D4AF37;
+  --accent: #FFA500;
+  --background: #000000;
+  --surface: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+  --border: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 2rem;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255,215,0,0.05) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(255,215,0,0.05) 0%, transparent 30%);
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 4rem;
+    font-weight: 900;
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+form {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 0 20px rgba(255, 215, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255,215,0,0.1),
+    transparent
+  );
+  animation: gradientRotate 6s linear infinite;
+}
+
+@keyframes gradientRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.input-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+}
+
+input {
+  flex: 1;
+  padding: 1.2rem;
+  background: rgba(51, 51, 51, 0.6);
+  border: 1px solid #444444;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+    width: 100%;
+    margin-bottom: 15px
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.2),
+    inset 0 0 10px rgba(255, 215, 0, 0.1);
+  background: rgba(51, 51, 51, 0.8);
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* min-width: 160px; */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,215,0,0.3);
+}
+
+button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 25px rgba(255, 215, 0, 0.4),
+    0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+ul {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+li {
+  background: var(--surface);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #333333;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,215,0,0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255,215,0,0.1);
+}
+
+li:hover::before {
+  left: 100%;
+}
+
+li h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+li p {
+  color: #888888;
+  line-height: 1.6;
+  padding-right: 2rem;
+}
+
+li button {
+  margin-top: 1.2rem;
+  margin-right: 0.8rem;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+li button:first-child {
+  background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,165,0,0.1) 100%);
+  color: #ff3232;
+  border: 1px solid rgba(255,215,0,0.3);
+}
+
+li button:last-child {
+  background: linear-gradient(135deg, rgba(255,50,50,0.15) 0%, rgba(255,0,0,0.1) 100%);
+  color: #ff3232;
+  border: 1px solid rgba(255,50,50,0.3);
+}
+
+li button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(255,255,255,0.1);
+}
+
+.toast {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(42,42,42,0.95) 100%);
+  width: 300px;
+  color: var(--primary);
+  padding: 1.2rem 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.3),
+    0 8px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  backdrop-filter: blur(15px);
+  font-weight: 500;
+}
+
+.toast.active {
+  bottom: 2.5rem;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .input-row {
+    flex-direction: column;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+  }
+  
+  body {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  li {
+    padding: 1.2rem;
+  }
+}
