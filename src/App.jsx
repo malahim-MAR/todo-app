@@ -9,7 +9,7 @@ function App() {
   const [showToast, setShowToast] = useState(false);
   useEffect(() => {
     if (showToast) {
-      const timer = setTimeout(() => setShowToast(false), 4000); // 4 seconds
+      const timer = setTimeout(() => setShowToast(false), 4100); // 4 seconds
       return () => clearTimeout(timer);
     }
   }, [showToast]);
